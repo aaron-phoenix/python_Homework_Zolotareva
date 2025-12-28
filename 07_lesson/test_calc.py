@@ -15,3 +15,4 @@ def test_calc(driver):
     calcPage.operation()
     calcPage.waits()
     calcPage.result(15)
+    

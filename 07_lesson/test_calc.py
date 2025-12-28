@@ -14,4 +14,4 @@ def test_calc(driver):
     calcPage.time("45")
     calcPage.operation()
     calcPage.waits()
-    calcPage.result()
+    calcPage.result(15)

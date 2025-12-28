@@ -26,4 +26,4 @@ def test_shop(driver):
     auth.waits()
     buy.buying()
     auth.waits()
-    buy.result()
+    buy.result("Total: $58.29")

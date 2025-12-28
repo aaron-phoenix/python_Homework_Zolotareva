@@ -21,10 +21,10 @@ class CalcPage:
         time_waiter.clear()
         time_waiter.send_keys(seconds)
     
-    def result(self):
+    def result(self, value):
         result_element = self.driver.find_element(By.CSS_SELECTOR, ".screen")
         res = result_element.text
-        assert int(res) == 15
+        assert int(res) == value
     
     def waits(self):
         waiter = WebDriverWait(self.driver, 50)

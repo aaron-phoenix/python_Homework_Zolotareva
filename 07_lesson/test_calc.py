@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from calc.CalcPage import CalcPage
 import pytest
 
@@ -14,5 +15,8 @@ def test_calc(driver):
     calcPage.time("45")
     calcPage.operation()
     calcPage.waits()
-    calcPage.result(15)
+    
+    result_element = driver.find_element(By.CSS_SELECTOR, ".screen")
+    res = result_element.text
+    assert int(res) == 15
     

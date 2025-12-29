@@ -9,7 +9,3 @@ class BuyShop:
         self.driver.find_element(By.CSS_SELECTOR, "#last-name").send_keys("Zolotareva")
         self.driver.find_element(By.CSS_SELECTOR, "#postal-code").send_keys("394074")
         self.driver.find_element(By.CSS_SELECTOR, "#continue").click()
-
-    def result(self, value):
-        total = self.driver.find_element(By.CSS_SELECTOR, ".summary_total_label").text
-        assert total == value

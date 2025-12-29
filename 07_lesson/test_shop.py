@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 import pytest
 from shop.AuthShop import AuthShop
 from shop.BuyShop import BuyShop
@@ -26,4 +27,5 @@ def test_shop(driver):
     auth.waits()
     buy.buying()
     auth.waits()
-    buy.result("Total: $58.29")
+    total = driver.find_element(By.CSS_SELECTOR, ".summary_total_label").text
+    assert total == "Total: $58.29"

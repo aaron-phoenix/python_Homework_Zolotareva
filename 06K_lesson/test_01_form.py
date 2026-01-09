@@ -1,8 +1,17 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.edge.service import Service
+from selenium.webdriver.edge.options import Options
+options = Options()
+options.add_argument('--disable-logging')
+options.add_argument('--silent')
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+options.add_argument('--log-level=3')
 
-driver = webdriver.Edge()
-
+#driver = webdriver.Edge(options=options)
+edge_driver_path = r"E:\Learning\Python\Hometask1\edgedriver_win64\msedgedriver.exe"
+driver = webdriver.Edge(service=Service(executable_path=edge_driver_path), options=options)
+                        
 def test_form():
 
     driver.get("https://bonigarcia.dev/selenium-webdriver-java/data-types.html")

@@ -51,17 +51,17 @@ def test_insert_new_subject():
     subd.get_tables()
     len_before = subd.get_list()
     new_subject = "OBZR"
-    subd.insert_new({"new_subject": new_subject})
+    subd.insert_new({"new_subject_title": new_subject})
     len_after = subd.get_list()
     
     assert len_after == len_before + 1
     
     max_id = subd.get_max_id()
     value_ID = max_id + 1 if max_id > 0 else 1  
-    subd.update_new({"new_subject_id": value_ID, "new_subject": new_subject})
+    subd.update_new({"new_subject_id": value_ID, "new_subject_title": new_subject})
     
     subd.delete_new({"new_subject_id": value_ID})
     print("Тест пройден успешно!")
 
 if __name__ == "__main__":
-    test_insert_new_student()
+    test_insert_new_subject()

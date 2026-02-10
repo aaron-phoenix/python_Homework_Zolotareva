@@ -1,3 +1,4 @@
+#!/bin/bash
 #run.sh
 results=./results
 rep_history=./final-report/history
@@ -9,4 +10,3 @@ mv $rep_history $results # Перенести историю в результа
 rm -rf $report # Удалить отчет
 allure generate $results -o $report # Сгенерировать отчет
 allure open $report # Открыть отчет
-

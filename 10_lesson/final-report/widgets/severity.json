@@ -1,1 +1,1 @@
-[]
+[{"uid":"10461e8db14e643d","name":"Тестирование интернет-магазина товаров","time":{"start":1770734722560,"stop":1770734725997,"duration":3437},"status":"passed","severity":"critical"},{"uid":"953611b5d8079068","name":"Тестирование калькулятора: 7+8=15","time":{"start":1770734645541,"stop":1770734713928,"duration":68387},"status":"passed","severity":"critical"}]

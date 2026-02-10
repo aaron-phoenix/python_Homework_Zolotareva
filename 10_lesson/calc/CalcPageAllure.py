@@ -67,7 +67,6 @@ class CalcPage:
         """
         Возвращает результат вычислений
         Тип возвращаемых данных - str
-        :params CSS_SELECTOR: локатор отображения итогового результата из DevTools
         """
         return self.driver.find_element(By.CSS_SELECTOR, ".screen").text
     

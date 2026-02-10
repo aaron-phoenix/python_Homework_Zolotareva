@@ -14,6 +14,5 @@ class CartShop:
         """
         Открывает форму заполнения информации о покупателе
         
-        :param CSS_SELECTOR: локатор для кнопки checkout из DevTools
         """
         self.driver.find_element(By.CSS_SELECTOR, "#checkout").click()

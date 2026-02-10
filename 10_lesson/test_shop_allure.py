@@ -32,10 +32,15 @@ def test_shop(driver):
     main = MainShop(driver)
     cart = CartShop(driver)
     buy = BuyShop(driver)
+    login = "standard_user"
+    password = "secret_sauce"
+    name = "Elena"
+    surname = "Zolotareva"
+    index = "394074"
     with allure.step("Ожидание открытия страницы магазина"):
         auth.open_shop()
     with allure.step("Авторизация на сайте магазина"):
-        auth.authorisation()
+        auth.authorisation(login, password)
     with allure.step("Ожидание результата"):
         auth.waits()
     with allure.step("Добавление товаров в корзину"):
@@ -49,7 +54,7 @@ def test_shop(driver):
     with allure.step("Ожидание результата"):
         auth.waits()
     with allure.step("Заполнение формы информации о покупателе"):
-        buy.buying()
+        buy.buying(name, surname, index)
     with allure.step("Ожидание результата"):
         auth.waits()
 

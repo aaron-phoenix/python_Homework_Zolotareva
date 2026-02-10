@@ -18,27 +18,27 @@ class AuthShop:
         Открывает страницу магазина.
         """
     @allure.step("Авторизация на сайте магазина")
-    def authorisation(self):
+    def authorisation(self, login, password):
         """
-        Вводим логин и пароль в форму авторизации на сайте магазина.
+        Метод для заполнения формы авторизации на сайте магазина.
         
-        :param CSS_SELECTOR: локаторы для формы авторизации и нажатия кнопки войти из DevTools
-        :param send_keys: логин и пароль для формы авторизации
+        :param login: логин пользователя
+        :param: пароль пользователя
         """
-        self.driver.find_element(By.CSS_SELECTOR, "#user-name").send_keys("standard_user")
-        self.driver.find_element(By.CSS_SELECTOR, "#password").send_keys("secret_sauce")
+        
+        self.driver.find_element(By.CSS_SELECTOR, "#user-name").send_keys(login)
+        self.driver.find_element(By.CSS_SELECTOR, "#password").send_keys(password)
         self.driver.find_element(By.CSS_SELECTOR, "#login-button").click()
 
     @allure.step("Ожидание результата")
-    def waits(self):
+    def waits(self, time:int = 5):
         """
         Ожидает загрузки страницы после авторизации
         Ожидаемый результат - загрузка html-тега body
-        :param: int
-        :param CSS_SELECTOR: локатор тега body из DevTools
+        По умолчанию значение параметра 5.
         
         """
-        waiter = WebDriverWait(self.driver, 5)
+        waiter = WebDriverWait(self.driver, time)
 
         waiter.until(
         EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "body"))

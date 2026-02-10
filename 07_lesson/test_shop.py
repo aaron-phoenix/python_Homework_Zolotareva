@@ -1,10 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pytest
-from shop.AuthShop import AuthShop
-from shop.BuyShop import BuyShop
-from shop.CartShop import CartShop
-from shop.MainShop import MainShop
+from shop.AuthShopAllure import AuthShop
+from shop.BuyShopAllure import BuyShop
+from shop.CartShopAllure import CartShop
+from shop.MainShopAllure import MainShop
 
 @pytest.fixture
 def driver():
